@@ -27,7 +27,8 @@
                     <td>{{$post->id}}</td>
                     <td style="vertical-align: middle;">{{$post->user->name}}</td>
                     {{--can be also as: $post->user['name']--}}
-                    <td style="vertical-align: middle;">{{$post->category_id}}</td>
+                    {{--<td style="vertical-align: middle;">{{\App\Category::find($post->category_id)->name}}</td>--}}
+                    <td style="vertical-align: middle;">{{$post->category ? $post->category->name : "Uncategoriazed"}}</td>
                     <td style="vertical-align: middle;"><img height="50" class="img-rounded" src="{{$post->photo ? $post->photo->file : 'http://placehold.it/50x50'}}"></td>
                     <td style="vertical-align: middle;"><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->title}}</a></td>
                     <td style="vertical-align: middle;">{{substr($post->body, 0, 20) . "..."}}</td>

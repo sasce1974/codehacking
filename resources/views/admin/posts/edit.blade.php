@@ -18,12 +18,11 @@
         <div class="form-group">
             <label for="category_id">Category</label>
             <select class="form-control" name="category_id">
-                <option value="">Choose Post Category</option>
-                @foreach($roles as $role)
-                    @if($role['id'] == $post->category_id)
-                        <option value="{{$role['id']}}" selected>{{$role['name']}}</option>
+                @foreach($categories as $category)
+                    @if($category['id'] == $post->category_id)
+                        <option value="{{$category['id']}}" selected>{{$category['name']}}</option>
                     @else
-                        <option value="{{$role['id']}}">{{$role['name']}}</option>
+                        <option value="{{$category['id']}}">{{$category['name']}}</option>
                     @endif
                 @endforeach
             </select>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Photo;
 use App\Post;
 use App\Role;
@@ -32,8 +33,8 @@ class AdminPostsController extends Controller
      */
     public function create()
     {
-        $roles = Role::all();
-        return view('admin.posts.create', compact('roles'));
+        $categories = Category::all();
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -81,9 +82,9 @@ class AdminPostsController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
-        $roles = Role::all();
+        $categories = Category::all();
 
-        return view('admin.posts.edit', compact('post', 'roles'));
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     /**

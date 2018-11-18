@@ -9,8 +9,8 @@
             <label for="category_id">Category</label>
             <select class="form-control" name="category_id">
                 <option value="">Choose Post Category</option>
-                @foreach($roles as $role)
-                    <option value="{{$role['id']}}">{{$role['name']}}</option>
+                @foreach($categories as $category)
+                    <option value="{{$category['id']}}">{{$category['name']}}</option>
                 @endforeach
             </select>
             {{--<input type="text" class="form-control" id="role_id" aria-describedby="roleHelp" placeholder="Enter User Role">--}}
